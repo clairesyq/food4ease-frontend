@@ -31,7 +31,7 @@ export const register = async (email, username, password, role) => {
         return failure(data)
       }
       else {
-        await setSessionToken(data.auth_token);
+        await setSessionToken(data.data.auth_token);
         return success(data)
 
       }
@@ -52,7 +52,7 @@ export const login = async (email, password) => {
         return failure(data)
       }
       else {
-        await setSessionToken(data.auth_token);
+        await setSessionToken(data.data.auth_token);
         return success(data)
 
       }
@@ -60,18 +60,28 @@ export const login = async (email, password) => {
 };
 
 
-export const isSignedIn = () => {
-  return new Promise((resolve, reject) => {
-    getSessionToken().then((res) => {
-      console.log(res)
-      if (res !== null) {
-        resolve(true);
-      } else {
-        resolve(false);
-      }
+export const findNearest = async (latitude, longitude) => {
+  const session_token = await getSessionToken()
+  return fetch(`${url}dispenser/near-me/`,
+    {
+      method: "POST",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: 'token ' + session_token
+      },
+      body: JSON.stringify({
+        latitude: latitude,
+        longitude: longitude,
+      })
+    }).then(res => res.json())
+    .then(data => {
+      return data
     })
-      .catch((err) => reject(err));
-  });
-};
+    .catch(console.error)
+}
+
+
+
 
 

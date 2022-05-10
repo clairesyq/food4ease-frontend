@@ -13,7 +13,7 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Signup"
+        initialRouteName="Signin"
         screenOptions={{
           headerShown: false,
         }}>

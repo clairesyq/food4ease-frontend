@@ -116,4 +116,73 @@ export default StyleSheet.create({
     fontSize: 14,
     fontWeight: "500"
   },
+  locationArrow: {
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 1,
+      height: 3
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.2,
+    position: 'absolute',
+    zIndex: 100,
+    width: '80%',
+    alignSelf: 'center',
+    bottom: 70,
+    left: 310
+  },
+  image: {
+    position: 'absolute',
+    width: "90%",
+    height: 60,
+    alignSelf: 'center',
+    top: 30,
+    left: 18
+  },
+  list: {
+    position: 'absolute',
+    width: "90%",
+    height: 652,
+    alignSelf: 'center',
+    top: 120,
+    left: 18
+  },
+  marker: {
+    flexDirection: 'row',
+    left: 35,
+    top: 140,
+  },
+  description: {
+    flexDirection: 'row',
+    color: "#797979",
+    fontSize: 16,
+    fontWeight: "600",
+    textAlign: 'left',
+    left: 70,
+    top: 140,
+    position: 'absolute'
+  },
+  fraction: {
+    flexDirection: 'row',
+    color: "#797979",
+    opacity: 0.75,
+    fontSize: 12,
+    fontWeight: "600",
+    textAlign: 'right',
+    right: 40,
+    top: 140,
+    position: 'absolute'
+  },
+  address: {
+    flexDirection: 'row',
+    color: "#797979",
+    opacity: 0.75,
+    fontSize: 13,
+    fontWeight: "600",
+    textAlign: 'left',
+    left: 70,
+    top: 140,
+    marginBottom: 20,
+  },
 });
+
